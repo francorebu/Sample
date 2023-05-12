@@ -23,14 +23,17 @@ public class LoginPage {
     }
 
     public void enterUsername(String username) {
+       System.out.println(".....It is entering username : ...... " + username ) ;
        driver.findElement(usernameField).sendKeys(username);
     }
 
     public void enterPassword(String password) {
+        System.out.println(".....It is entering password : ...... " + password ) ;
         driver.findElement(passwordField).sendKeys(password);
     }
 
     public void clickLoginButton() {
+        System.out.println(".....It is clicking on Login button : ...... "  ) ;
         driver.findElement(loginButton).click();
     }
 }
