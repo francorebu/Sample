@@ -1,9 +1,13 @@
 name: Selenium Test
 
 on:
+  workflow_dispatch:
+
   push:
-    branches:
-      - main
+    branches: [main]
+    
+  schedule:
+    - cron: '0 9 * * *'
 
 jobs:
   build-and-test:
