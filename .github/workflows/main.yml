@@ -21,6 +21,11 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v2
+        
+      - name: Install Chromedriver
+        run: |
+          curl -LO https://chromedriver.storage.googleapis.com/114/chromedriver_win32.zip
+          Expand-Archive -Path "chromedriver_win32.zip" -DestinationPath "C:\Automation\chromedriver_win32"  
 
       - name: Build with Maven
         run: mvn clean compile
