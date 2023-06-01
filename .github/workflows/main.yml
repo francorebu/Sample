@@ -22,6 +22,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         
+      - name: Download Chrome
+        run: |
+            curl -sSL -o chrome_installer.exe "https://dl.google.com/chrome/win32/stable/GGRO/googlechromestandaloneenterprise64.msi"
+            Start-Process -Wait -FilePath "chrome_installer.exe" -ArgumentList "/silent /install"
+
+        
       - name: Install Chromedriver
         run: |
           $desiredVersion = "113.0.5672.63"  # Replace with the desired Chromedriver version
