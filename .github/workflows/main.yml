@@ -28,10 +28,6 @@ jobs:
 
       - name: Install Chrome
         run: choco install googlechrome -y
-        
-      - name: Display Chrome Version
-        run: |
-          "C:\Program Files\Google\Chrome\Application\chrome.exe" --version
 
       - name: Install Chromedriver
         run: |
