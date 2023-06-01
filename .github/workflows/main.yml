@@ -24,12 +24,11 @@ jobs:
         
       - name: Install Chromedriver
         run: |
-          curl -sSLO https://chromedriver.storage.googleapis.com/LATEST_RELEASE
-          latestVersion=$(cat LATEST_RELEASE)
-          curl -sSLO "https://chromedriver.storage.googleapis.com/$latestVersion/chromedriver_win32.zip"
-          Expand-Archive -Path "chromedriver_win32.zip" -DestinationPath "C:\Automation\chromedriver_win32"
-          Remove-Item -Path LATEST_RELEASE
-          Remove-Item -Path chromedriver_win32.zip
+          $latestVersion = (Invoke-WebRequest -Uri 'https://chromedriver.storage.googleapis.com/LATEST_RELEASE').Content.Trim()
+          Invoke-WebRequest -Uri "https://chromedriver.storage.googleapis.com/$latestVersion/chromedriver_win32.zip" -OutFile 'chromedriver_win32.zip'
+          Expand-Archive -Path 'chromedriver_win32.zip' -DestinationPath 'C:\Automation\chromedriver_win32'
+          Remove-Item -Path 'chromedriver_win32.zip'
+
 
           
       - name: Build with Maven
