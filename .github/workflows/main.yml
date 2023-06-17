@@ -35,4 +35,4 @@ jobs:
         run: mvn clean compile
 
       - name: Run Selenium tests
-        run: mvn test -Dtest=LoginTest#validLoginTest
+        run: mvn test

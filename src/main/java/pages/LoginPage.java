@@ -10,30 +10,31 @@ public class LoginPage {
     private By usernameField  = By.xpath("//*[@name='username']");
     private By passwordField  = By.xpath("//*[@name='password']");
     private By loginButton    = By.xpath("//button[@type='submit']");
+    private By errorMessage   = By.xpath("//*[contains(@class,'content--error')]");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void login(String user,String pass) throws InterruptedException {
+    public void login(String user,String pass) {
         enterUsername(user);
         enterPassword(pass);
-        Thread.sleep(2000);
         clickLoginButton();
     }
 
     public void enterUsername(String username) {
-       System.out.println(".....It is entering username : ...... " + username ) ;
        driver.findElement(usernameField).sendKeys(username);
     }
 
     public void enterPassword(String password) {
-        System.out.println(".....It is entering password : ...... " + password ) ;
         driver.findElement(passwordField).sendKeys(password);
     }
 
     public void clickLoginButton() {
-        System.out.println(".....It is clicking on Login button : ...... "  ) ;
         driver.findElement(loginButton).click();
+    }
+
+    public boolean isErrorMsgDisplayed(){
+        return driver.findElement(errorMessage).isDisplayed();
     }
 }
