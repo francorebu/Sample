@@ -2,10 +2,12 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import utils.GenericMethods;
 
 public class LoginPage {
 
     private WebDriver driver;
+    private GenericMethods gm;
 
     private By usernameField  = By.xpath("//*[@name='username']");
     private By passwordField  = By.xpath("//*[@name='password']");
@@ -14,6 +16,7 @@ public class LoginPage {
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
+        this.gm = new GenericMethods(driver);
     }
 
     public void login(String user,String pass) {
@@ -23,7 +26,8 @@ public class LoginPage {
     }
 
     public void enterUsername(String username) {
-       driver.findElement(usernameField).sendKeys(username);
+        gm.waitforElementVisible(driver,15,usernameField);
+        driver.findElement(usernameField).sendKeys(username);
     }
 
     public void enterPassword(String password) {
