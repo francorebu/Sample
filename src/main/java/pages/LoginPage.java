@@ -26,7 +26,7 @@ public class LoginPage {
     }
 
     public void enterUsername(String username) {
-        gm.waitforElementVisible(driver,15,usernameField);
+        gm.waitForElementVisible(driver,15,usernameField);
         driver.findElement(usernameField).sendKeys(username);
     }
 

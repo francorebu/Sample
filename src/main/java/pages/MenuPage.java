@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utils.GenericMethods;
-import utils.GenericMethods.*;
 
 public class MenuPage {
     private WebDriver driver;
@@ -17,7 +16,7 @@ public class MenuPage {
     }
 
     public void clickOnRecuitment(){
-        gm.waitforElementVisible(driver,15,recruitmentItem);
+        gm.waitForElementVisible(driver,15,recruitmentItem);
         driver.findElement(recruitmentItem).click();
     }
 }
