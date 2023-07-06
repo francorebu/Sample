@@ -10,3 +10,7 @@ mvn -version
 
 To run all the tests this is the command :
 mvn test
+
+Tu run specific testcase this is the command:
+mvn test -Dtest=className#testName
+example: mvn test -Dtest=LoginSuccesfulTest#validLoginTest
