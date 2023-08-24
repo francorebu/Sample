@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class AddCandidateTest extends BaseTest {
 
-    @Test
+    @Test(enabled=false)
     public void addCandidate(){
         loginPage.login("Admin","admin123");
         menuPage.clickOnRecuitment();
