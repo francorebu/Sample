@@ -7,6 +7,7 @@ import pages.LoginPage;
 import pages.TopBarPage;
 import pages.CandidatesPage;
 import pages.MenuPage;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.util.concurrent.TimeUnit;
 
@@ -25,7 +26,8 @@ public class BaseTest {
     }
 
     public void driverSetup(){
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
