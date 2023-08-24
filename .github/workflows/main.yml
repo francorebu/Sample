@@ -24,14 +24,6 @@ jobs:
         run: |
           Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
-      - name: Install Chrome via Chocolatey
-        run: choco install googlechrome -y
-
-      - name: Download and Install Chromedriver
-        run: |
-          Invoke-WebRequest -Uri "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/116.0.5845.96/win32/chromedriver_win32.zip" -OutFile 'chromedriver_win32.zip'
-          Expand-Archive -Path 'chromedriver_win32.zip' -DestinationPath 'C:\Automation\chromedriver_win32'
-          Remove-Item -Path 'chromedriver_win32.zip'
 
       - name: Build with Maven
         run: mvn clean compile
