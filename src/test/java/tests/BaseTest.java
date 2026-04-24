@@ -10,6 +10,7 @@ import pages.CandidatesPage;
 import pages.MenuPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
@@ -33,7 +34,6 @@ public class BaseTest {
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }
 

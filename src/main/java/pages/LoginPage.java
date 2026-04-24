@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utils.GenericMethods;
 
+import java.time.Duration;
+
 public class LoginPage {
 
     private WebDriver driver;
@@ -26,7 +28,7 @@ public class LoginPage {
     }
 
     public void enterUsername(String username) {
-        gm.waitForElementVisible(driver,15,usernameField);
+        gm.waitForElementVisible(driver, Duration.ofSeconds(15),usernameField);
         driver.findElement(usernameField).sendKeys(username);
     }
 

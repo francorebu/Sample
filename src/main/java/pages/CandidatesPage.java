@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utils.GenericMethods;
 
+import java.time.Duration;
+
 public class CandidatesPage {
 
     private WebDriver driver;
@@ -23,7 +25,7 @@ public class CandidatesPage {
     }
 
     public void clickOnAddCandidate(){
-        gm.waitForElementVisible(driver,15,addCandidateButton);
+        gm.waitForElementVisible(driver,Duration.ofSeconds(15),addCandidateButton);
         driver.findElement(addCandidateButton).click();
     }
 
@@ -58,7 +60,7 @@ public class CandidatesPage {
 
     public boolean validateSuccesfulMsg(){
         try {
-            gm.waitForElementVisible(driver,15,succesfulMsg);
+            gm.waitForElementVisible(driver, Duration.ofSeconds(15),succesfulMsg);
             driver.findElement(succesfulMsg).isDisplayed();
             return true;
         }catch(Exception e){

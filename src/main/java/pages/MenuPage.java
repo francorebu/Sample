@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utils.GenericMethods;
 
+import java.time.Duration;
+
 public class MenuPage {
     private WebDriver driver;
     private GenericMethods gm;
@@ -16,7 +18,7 @@ public class MenuPage {
     }
 
     public void clickOnRecuitment(){
-        gm.waitForElementVisible(driver,15,recruitmentItem);
+        gm.waitForElementVisible(driver, Duration.ofSeconds(15),recruitmentItem);
         driver.findElement(recruitmentItem).click();
     }
 }

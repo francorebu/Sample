@@ -2,6 +2,7 @@ package utils;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.Calendar;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -25,7 +26,7 @@ public class GenericMethods {
         this.driver=driver;
     }
 
-    public boolean waitForElementVisible(WebDriver driver, int timeout, By locator ) {
+    public boolean waitForElementVisible(WebDriver driver, Duration timeout, By locator ) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, timeout);
             wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
