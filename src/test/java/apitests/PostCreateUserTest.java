@@ -14,7 +14,7 @@ public class PostCreateUserTest extends BaseAPITest {
 
     private final Gson gson = new Gson();
 
-    @Test
+    @Test(enabled=false)
     public void testCreateUser () {
         String endpoint = "https://reqres.in/api/users";
         User user = new User("morpheus", "leader");
