@@ -10,12 +10,12 @@ import pojos.User;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
-public class PostCreateUser {
+public class PostCreateUser extends BaseAPITest {
 
     private final Gson gson = new Gson();
 
     @Test
-    public void testCreateUser() {
+    public void testCreateUser () {
         String endpoint = "https://reqres.in/api/users";
         User user = new User("morpheus", "leader");
         String requestBody = gson.toJson(user);
