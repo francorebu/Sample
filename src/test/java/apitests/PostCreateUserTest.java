@@ -10,7 +10,7 @@ import pojos.User;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
-public class PostCreateUser extends BaseAPITest {
+public class PostCreateUserTest extends BaseAPITest {
 
     private final Gson gson = new Gson();
 

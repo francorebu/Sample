@@ -42,6 +42,7 @@ public class LoginPage {
     }
 
     public boolean isErrorMsgDisplayed(){
+        gm.waitForElementVisible(errorMessage);
         return driver.findElement(errorMessage).isDisplayed();
     }
 }
