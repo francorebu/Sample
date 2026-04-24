@@ -25,7 +25,7 @@ public class CandidatesPage {
     }
 
     public void clickOnAddCandidate(){
-        gm.waitForElementVisible(driver,Duration.ofSeconds(15),addCandidateButton);
+        gm.waitForElementVisible(addCandidateButton);
         driver.findElement(addCandidateButton).click();
     }
 
@@ -60,7 +60,7 @@ public class CandidatesPage {
 
     public boolean validateSuccesfulMsg(){
         try {
-            gm.waitForElementVisible(driver, Duration.ofSeconds(15),succesfulMsg);
+            gm.waitForElementVisible(succesfulMsg);
             driver.findElement(succesfulMsg).isDisplayed();
             return true;
         }catch(Exception e){

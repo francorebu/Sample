@@ -18,7 +18,7 @@ public class MenuPage {
     }
 
     public void clickOnRecuitment(){
-        gm.waitForElementVisible(driver, Duration.ofSeconds(15),recruitmentItem);
+        gm.waitForElementVisible(recruitmentItem);
         driver.findElement(recruitmentItem).click();
     }
 }

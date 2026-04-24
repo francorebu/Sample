@@ -26,9 +26,9 @@ public class GenericMethods {
         this.driver=driver;
     }
 
-    public boolean waitForElementVisible(WebDriver driver, Duration timeout, By locator ) {
+    public boolean waitForElementVisible(By locator) {
         try {
-            WebDriverWait wait = new WebDriverWait(driver, timeout);
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
             return true;
         } catch (Exception e) {
