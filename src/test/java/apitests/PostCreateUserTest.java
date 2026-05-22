@@ -14,21 +14,20 @@ public class PostCreateUserTest extends BaseAPITest {
 
     private final Gson gson = new Gson();
 
-    @Test(enabled=false)
+    @Test
     public void testCreateUser () {
-        String endpoint = "https://reqres.in/api/users";
         User user = new User("morpheus", "leader");
         String requestBody = gson.toJson(user);
 
-        given()
-                .contentType(ContentType.JSON)
-                .body(requestBody)
+                given()
+                    .contentType(ContentType.JSON)
+                    .body(requestBody)
                 .when()
-                .post(endpoint)
+                    .post(baseURI+"/users")
                 .then()
-                .statusCode(201) // Assuming you expect a 201 status code for successful creation
-                .body("name", equalTo("morpheus"))
-                .body("job", equalTo("leader"));
+                    .statusCode(201)
+                    .body("name", equalTo("morpheus"))
+                    .body("job", equalTo("leader"));
     }
 }
 

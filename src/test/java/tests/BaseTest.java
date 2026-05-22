@@ -8,10 +8,6 @@ import pages.LoginPage;
 import pages.TopBarPage;
 import pages.CandidatesPage;
 import pages.MenuPage;
-import io.github.bonigarcia.wdm.WebDriverManager;
-
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     protected WebDriver driver;
@@ -28,13 +24,10 @@ public class BaseTest {
     }
 
     public void driverSetup(){
-        //System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless=new");
+        options.addArguments("--start-maximized");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
-
         driver = new ChromeDriver(options);
     }
 

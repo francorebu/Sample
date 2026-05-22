@@ -4,8 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utils.GenericMethods;
 
-import java.time.Duration;
-
 public class LoginPage {
 
     private WebDriver driver;

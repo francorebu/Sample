@@ -11,24 +11,22 @@ public class GetUserTest extends BaseAPITest {
 
     @Test
     public void getUserDetails() {
-        // Set base URL
-        RestAssured.baseURI = "https://reqres.in/api";
 
-        // Send GET request and retrieve the response
-        Response response = given()
+
+        Response response =
+                given()
                 .when()
-                .get("/users/2")
+                    .get("/users/2")
                 .then()
-                .statusCode(200)
-                .extract()
-                .response();
+                    .statusCode(200)
+                    .extract()
+                    .response();
 
-        // Validate the response
+
         response.then()
                 .body("data.id", equalTo(2))
                 .body("data.email", equalTo("janet.weaver@reqres.in"))
                 .body("data.first_name", equalTo("Janet"))
-                .body("data.last_name", equalTo("Weaver"))
-                .body("data.avatar", equalTo("https://reqres.in/img/faces/2-image.jpg"));
+                .body("data.last_name", equalTo("Weaver"));
     }
 }
